@@ -91,7 +91,11 @@ def screen_templates(halftones, threshold=128):
 if __name__ == '__main__':
     im = Image.open("images/test.jpg")
 
+    # Change percentage to modify the levels of the Black in the CMYK (K = black Key)
     cmyk = gcr(im, 30)
+
+    # Change sample to modify resolution of sampling.
+    # Change scale to modify density of the dots.
     dots = halftone(im, cmyk, 10, 1)
     screens = screen_templates(dots)
 
